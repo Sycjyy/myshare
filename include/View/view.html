@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<table>
+	<tr>
+		<td>id</td>
+		<td>姓名</td>
+		<td>性别</td>
+	</tr>
+<?php foreach ($result as $key => $value) { ?>
+	<tr>
+		<td><?php echo $value['id'] ?></td>
+		<td><?php echo $value['name'] ?></td>
+		<td><?php echo $value['gender'] ?></td>
+	</tr>
+<?php } ?>
+</table>
