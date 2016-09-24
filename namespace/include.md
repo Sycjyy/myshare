@@ -115,9 +115,61 @@ echo \Foo\Bar\FOO; // 解析为常量 Foo\Bar\FOO
 
 ###namespace关键字和__NAMESPACE__常量
 PHP支持两种抽象的访问当前命名空间内部元素的方法，__NAMESPACE__ 魔术常量和namespace关键字。
+
 常量__NAMESPACE__的值是包含当前命名空间名称的字符串。在全局的，不包括在任何命名空间中的代码，它包含一个空的字符串。
+
 关键字 namespace 可用来显式访问当前命名空间或子命名空间中的元素。它等价于类中的 self 操作符。
 
 ###使用命名空间：别名/导入
-在PHP中，别名是通过操作符 use 来实现的.使用use就要和自动加载函数__autoload结合。
-下面先讲一下自动加载函数。
+在PHP中，别名是通过操作符 use 来实现的.使用use就要和自动加载的魔术方法__autoload结合。
+下面先讲一下自动加载函数，之后再回来使用use。
+
+自动加载的原理，就是在我们new一个class的时候，PHP系统如果找不到你这个类，就会去自动调用本文件中的__autoload($class_name)方法，我们new的这个class_name 就成为这个方法的参数。所以我们就可以在这个方法中根据我们需要new class_name的各种判断和划分就去require对应的路径类文件，从而实现自动加载。
+
+###__autoload的使用
+index.php文件
+```
+function __autoload($className)
+{
+    require $className . '.php';
+}
+$db = new DB();
+//也是支持静态方法直接调用的
+DB::test();
+```
+DB.php文件
+```
+class DB
+{
+    public function __construct()
+    {
+        echo 'Hello DB <br/>';
+    }
+
+    public static function test()
+    {
+    	echo '静态方法也可以<br/>';
+    }
+}
+```
+
+###spl_autoload_register的使用
+小的项目，用__autoload()就能实现基本的自动加载了。但是如果一个项目过大，或者需要不同的自动加载来加载不同路径的文件，这个时候__autoload就悲剧了，原因是一个项目中仅能有一个这样的 __autoload() 函数，因为 PHP 不允许函数重名，也就是说你不能声明2个__autoload()函数文件，否则会报致命错误，我了个大擦，那怎么办呢？放心，你想到的，PHP开发大神早已经想到。
+所以spl_autoload_register()这样又一个牛逼函数诞生了，并且取而代之它。它执行效率更高，更灵活.
+
+如何使用：
+当我们去new一个找不到的class时，PHP就会去自动调用sql_autoload_resister注册的函数，这个函数通过它的参数传进去：
+
+sql_autoload_resister($param) 这个参数可以有多种形式：
+```
+sql_autoload_resister('load_function'); //函数名
+sql_autoload_resister(array('load_object', 'load_function')); //类和静态方法
+sql_autoload_resister('load_object::load_function'); //类和方法的静态调用
+
+//php 5.3之后，也可以像这样支持匿名函数了。
+spl_autoload_register(function($className){
+    if (is_file('./lib/' . $className . '.php')) {
+        require './lib/' . $className . '.php';
+    }
+});
+```
