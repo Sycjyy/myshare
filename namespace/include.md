@@ -1,6 +1,7 @@
 ##PHP 命名空间(namespace)
 
 PHP 命名空间(namespace)是在PHP 5.3中加入的,可以解决以下两类问题：
+
 1.用户编写的代码与PHP内部的类/函数/常量或第三方类/函数/常量之间的名字冲突。
 2.为很长的标识符名称(通常是为了缓解第一类问题而定义的)创建一个别名（或简短）的名称，提高源代码的可读性。
 
@@ -54,27 +55,35 @@ file1.php 文件代码
 <?php
 namespace Foo\Bar\subnamespace; 
 
-const FOO = 1;
-function foo() {}
+const FOO = '我的命名空间是 Foo\Bar\subnamespace<br/>';
+function foo() {
+	echo '我的命名空间是 '.__NAMESPACE__.'<br/>';
+}
 class foo
 {
-    static function staticmethod() {}
+    static function staticmethod() {
+    	echo '我的命名空间是'.__NAMESPACE__.'<br/>';
+    }
 }
 ?>
 ```
 
-index.php 文件代码
+file2.php 文件代码
 
 ```
 <?php
 namespace Foo\Bar;
 include 'file1.php';
 
-const FOO = 2;
-function foo() {}
+const FOO = '我的命名空间是 Foo\Bar<br/>';
+function foo() {
+	echo '我的命名空间是 '.__NAMESPACE__.'<br/>';
+}
 class foo
 {
-    static function staticmethod() {}
+    static function staticmethod() {
+    	echo '我的命名空间是'.__NAMESPACE__.'<br/>';
+    }
 }
 
 /* 非限定名称 */
@@ -92,23 +101,13 @@ echo subnamespace\FOO; // 解析为常量 Foo\Bar\subnamespace\FOO
 \Foo\Bar\foo(); // 解析为函数 Foo\Bar\foo
 \Foo\Bar\foo::staticmethod(); // 解析为类 Foo\Bar\foo, 以及类的方法 staticmethod
 echo \Foo\Bar\FOO; // 解析为常量 Foo\Bar\FOO
+
+/* 引用全局空间函数 */
+\foo(); //全局函数foo
 ?>
 ```
-注意访问任意全局类、函数或常量，都可以使用完全限定名称，例如 \strlen() 或 \Exception 或 \INI_ALL。
-在命名空间内部访问全局类、函数和常量：
-```
-<?php
-namespace Foo;
+注意访问任意全局类、函数或常量，都可以使用完全限定名称，例如 \foo() 等类和常量。
 
-function strlen() {}
-const INI_ALL = 3;
-class Exception {}
-
-$a = \strlen('hi'); // 调用全局函数strlen
-$b = \INI_ALL; // 访问全局常量 INI_ALL
-$c = new \Exception('error'); // 实例化全局类 Exception
-?>
-```
 
 ###namespace关键字和__NAMESPACE__常量
 PHP支持两种抽象的访问当前命名空间内部元素的方法，__NAMESPACE__ 魔术常量和namespace关键字。
@@ -117,3 +116,4 @@ PHP支持两种抽象的访问当前命名空间内部元素的方法，__NAMESP
 
 ###使用命名空间：别名/导入
 在PHP中，别名是通过操作符 use 来实现的.使用use就要和自动加载函数__autoload结合。
+下面先讲一下自动加载函数。

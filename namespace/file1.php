@@ -1,13 +1,13 @@
 <?php
 namespace Foo\Bar\subnamespace; 
 
-const FOO = "Foo\Bar\subnamespace-1";
+const FOO = '我的命名空间是 Foo\Bar\subnamespace<br/>';
 function foo() {
-	echo __NAMESPACE__.'-foo-function<br/>';
+	echo '我的命名空间是 '.__NAMESPACE__.'<br/>';
 }
 class foo
 {
     static function staticmethod() {
-    	echo __NAMESPACE__.'-foo-class-staticmethod<br/>';
+    	echo '我的命名空间是'.__NAMESPACE__.'<br/>';
     }
 }
