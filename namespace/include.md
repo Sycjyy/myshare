@@ -3,6 +3,7 @@
 PHP 命名空间(namespace)是在PHP 5.3中加入的,可以解决以下两类问题：
 
 1.用户编写的代码与PHP内部的类/函数/常量或第三方类/函数/常量之间的名字冲突。
+
 2.为很长的标识符名称(通常是为了缓解第一类问题而定义的)创建一个别名（或简短）的名称，提高源代码的可读性。
 
 ###定义命名空间
@@ -44,8 +45,11 @@ function Connect() { /* ... */  }
 
 ###命名空间使用
 PHP 命名空间中的类名可以通过三种方式引用：
+
 1.非限定名称，或不包含前缀的类名称，例如 $a=new foo(); 或 foo::staticmethod();。如果当前命名空间是 currentnamespace，foo 将被解析为 currentnamespace\foo。如果使用 foo 的代码是全局的，不包含在任何命名空间中的代码，则 foo 会被解析为foo。 警告：如果命名空间中的函数或常量未定义，则该非限定的函数名称或常量名称会被解析为全局函数名称或常量名称。
+
 2.限定名称,或包含前缀的名称，例如 $a = new subnamespace\foo(); 或 subnamespace\foo::staticmethod();。如果当前的命名空间是 currentnamespace，则 foo 会被解析为 currentnamespace\subnamespace\foo。如果使用 foo 的代码是全局的，不包含在任何命名空间中的代码，foo 会被解析为subnamespace\foo。
+
 3.完全限定名称，或包含了全局前缀操作符的名称，例如， $a = new \currentnamespace\foo(); 或 \currentnamespace\foo::staticmethod();。在这种情况下，foo 总是被解析为代码中的文字名(literal name)currentnamespace\foo。
 
 下面是一个使用这三种方式的实例：
