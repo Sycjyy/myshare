@@ -231,3 +231,123 @@ spl_autoload_register('__autoload');
 $db = new DB(); //DB就在本目录下
 $info = new Info(); //Info 在/lib/Info.php
 ```
+
+我们注册了3个自动加载函数。执行结果是
+```
+1Hello DB
+123Hello Info
+```
+**注意，前面说过，spl_autoload_register使用时，__autoload会无效，有时候，我们希望它继续有效，就可以也将它注册进来，就可以继续使用。**
+我们可以打印spl_autoload_functions()函数，来显示一共注册了多少个自动加载：
+```
+var_dump(spl_autoload_functions());
+//数组的形式输出
+array (size=3)
+  0 => string 'load1' (length=5)
+  1 => string 'load2' (length=5)
+  2 => string '__autoload' (length=10)
+```
+###spl_autoload_register自动加载+namespace命名空间 的使用
+前面已经说过，自动加载现在是PHP现代框架的基石，基本都是spl_autoload_register来实现自动加载。namespace也是使用比较多的。所以spl_autoload_register + namespace 就成为了一个主流。根据PSR-0的规范，namespace命名已经非常规范化，所以用namespace就能找到详细的路径，从而找到类文件。
+
+我们举例子来看下：
+
+AutoLoading\loading;
+```
+<?php
+namespace AutoLoading;
+class loading {
+    public static function autoload($className)
+    {
+        //根据PSR-O的第4点 把 \ 转换成（目录分割符） DIRECTORY_SEPARATOR , 
+        //便于兼容Linux文件找。Windows 下（/ 和 \）是通用的
+        //由于namspace 很规格，所以直接很快就能找到
+       $fileName = str_replace('\\', DIRECTORY_SEPARATOR,  DIR . '\\'. $className) . '.php';
+       if (is_file($fileName)) {
+            require $fileName;
+       } else {
+            echo $fileName . ' is not exist'; die;
+       }
+    }
+}
+
+```
+
+上面就是一个自动加载的核心思想方法。下面我们就来spl_autoload_register来注册这个函数：
+index.php
+```
+//定义当前的目录绝对路径
+define('DIR', dirname(__FILE__));
+//加载这个文件
+require DIR . '/autoloading.php';
+//采用`命名空间`的方式注册。php 5.3 加入的
+//也必须是得是static静态方法调用，然后就像加载namespace的方式调用，注意：不能使用use
+spl_autoload_register("\\AutoLoading\\loading::autoload"); 
+// 调用三个namespace类
+//定位到Lib目录下的Name.php 
+// var_dump(spl_autoload_functions());
+Lib\Name::test();
+//定位到App目录下Android目录下的Name.php
+App\Android\Name::test();
+//定位到App目录下Ios目录下的Name.php
+App\Ios\Name::test();
+```
+由于我们是采用PSR-O方式来定义namespace的命名的，所以很好的定位到这个文件的在哪个目录下了。
+APP\Android\Name
+```
+namespace App\Android;
+class Name
+{
+    public function __construct()
+    {
+        echo __NAMESPACE__ . "<br>";
+    }
+    public static function test()
+    {
+        echo  __NAMESPACE__ . ' static function test <br>';
+    }
+}
+```
+所以就会很容易找到文件，并输出：
+```
+Lib static function test 
+App\Android static function test 
+App\Ios static function test 
+```
+好了。基本自动加载的东西就讲完了。很实用的东西。
+
+### 同命名空间下的相互调用
+在平时我们使用命令空间时，有时候可能是在同一个命名空间下的2个类文件在相互调用。这个时候就要注意，在自动调用的问题了。
+
+比如Lib\Factory.php 和 Lib\Db\MySQL.php
+
+我想在 Lib\Factory.php 中调用 Lib\Db\MySQL.php。怎么调用呢？以下是错误的示范：
+```
+new Lib\Db\MySQL();  
+//报错，提示说 D:\wamp\www\testphp\module\Lib\Lib\Db\MySQL.php is not exist
+```
+看到没？这种方式是在Lib\命名空间的基础上来加载的。所以会加载2个Lib。这种方式相当于相对路径在加载。
+
+正确的做法是，如果是在同一个命名空间下平级的2个文件。可以直接调用，不用命名空间。
+```
+new MySQL(); //直接这样就可以了。
+new Db\MySQL(); //如果有个Db文件夹,就这样。
+```
+还有一种方法就是使用 use 。使用user就可以带上Lib了。**use使用的是绝对路径。**
+```
+use Lib\Db\MySQL;
+new MySQL();
+```
+我想在 Lib\Db\MySQL.php 中调用 Lib\Register.php。怎么调用呢？
+
+应该这样
+```
+use Lib\Register;
+Register::getInstance();
+```
+因为现在已经在Lib\Db这样一个命名空间了，如果你不用use，而是使用Lib\Register::getInstance()或者使用Register::getInstance()的话。将是在Lib\Db这个空间下进行相对路径的加载，是错误的。
+
+##总结
+-命名空间的三种引用方式：非限定名称、限定名称、完全限定名称。
+-项目中命名空间要按照文件目录的结构命名，方便自动加载过程中找到文件。
+-在使用的过程尽量使用use，即使同命名空间下。use使用的是绝对路径。
