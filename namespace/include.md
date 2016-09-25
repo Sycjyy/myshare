@@ -199,3 +199,35 @@ $db = new DB(); //会自动找到
 ```
 需要注意的是，如果你同时使用spl_autoload_register和__autoload，__autoload会失效！！！ 再说了，本来就是替换它的，就一心使用spl_autoload_register就好了。
 
+###多个spl_autoload_register的使用
+spl_autoload_register是可以多次重复使用的，这一点正是解决了__autoload的短板，那么如果一个页面有多个，**执行顺序是按照注册的顺序，一个一个往下找**，如果找到了就停止。
+
+```
+function load1($className)
+{
+    echo 1;
+    if (is_file($className . '.php')) {
+        require $className . '.php';
+    }
+}
+function load2($className)
+{
+    echo 2;
+    if (is_file('./app/' . $className . '.php')) {
+        require './app/' . $className . '.php';
+    }
+}
+function __autoload($className)
+{
+    echo 3;
+    if (is_file('./lib/' . $className . '.php')) {
+        require './lib/' . $className . '.php';
+    }
+}
+//注册了3个
+spl_autoload_register('load1');
+spl_autoload_register('load2');
+spl_autoload_register('__autoload'); 
+$db = new DB(); //DB就在本目录下
+$info = new Info(); //Info 在/lib/Info.php
+```
