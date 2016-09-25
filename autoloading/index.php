@@ -1,4 +1,5 @@
 <?php
+header('Content-Type:text/html;charset=utf-8');
 //定义当前的目录绝对路径
 define('DIR', dirname(__FILE__));
 //加载这个文件

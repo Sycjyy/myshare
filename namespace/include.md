@@ -173,3 +173,29 @@ spl_autoload_register(function($className){
     }
 });
 ```
+index.php
+```
+function load1($className)
+{
+    echo 1;
+    require $className . '.php';
+}
+spl_autoload_register('load1'); //将load1函数注册到自动加载队列中。
+$db = new DB(); //找不到DB类，就会自动去调用刚注册的load1函数了
+```
+上面就是实现了自动加载的方式，我们同样也可以用类加载的方式调用，但是必须是static方法：
+```
+class autoloading{
+    //必须是静态方法，不然报错
+    public static function load($className)
+    {   
+        require $className . '.php';
+    }
+}
+//2种方法都可以
+spl_autoload_register(array('autoloading','load')); 
+spl_autoload_register('autoloading::load');
+$db = new DB(); //会自动找到
+```
+需要注意的是，如果你同时使用spl_autoload_register和__autoload，__autoload会失效！！！ 再说了，本来就是替换它的，就一心使用spl_autoload_register就好了。
+

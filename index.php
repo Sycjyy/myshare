@@ -1,4 +1,8 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
 <ul>
 	<li>
 		<a href="/myshare/include/index1.php">
