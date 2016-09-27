@@ -43,9 +43,9 @@ require DIR . '/autoloading.php';
 //采用`命名空间`的方式注册。php 5.3 加入的
 //也必须是得是static静态方法调用，然后就像加载namespace的方式调用，注意：不能使用use
 spl_autoload_register("\\AutoLoading\\loading::autoload"); 
-// // 调用三个namespace类
-// //定位到Lib目录下的Name.php 
-// // var_dump(spl_autoload_functions());
+// 调用三个namespace类
+//定位到Lib目录下的Name.php 
+// var_dump(spl_autoload_functions());
 // Lib\Name::test();
 // //定位到App目录下Android目录下的Name.php
 // App\Android\Name::test();
@@ -53,8 +53,8 @@ spl_autoload_register("\\AutoLoading\\loading::autoload");
 // App\Ios\Name::test();
 
 
-// new Lib\Factory();
-Lib\Db\MySQL::test();
+new Lib\Factory();
+// Lib\Db\MySQL::test();
 
 /*
 PSR-0 下面描述了具体互操作性的自动加载所必须的条件：
