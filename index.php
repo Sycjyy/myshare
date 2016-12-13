@@ -21,3 +21,10 @@
 	</li>
 
 </ul>
+<script type="text/javascript">
+	window.onbeforeunload=onclose; 
+	// window.onclose = function(){
+		function onclose(){
+			alert('bye');
+		}
+</script>
