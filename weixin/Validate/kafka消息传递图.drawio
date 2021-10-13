@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-13T05:58:13.352Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="0XCGTd8f6AMEG9laN8QS" version="15.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-13T08:32:07.524Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="FfYRlUTVdlRYfDthQMEa" version="15.5.1" type="github">
   <diagram id="Hw2IK7ok40k7nLGpnW4U" name="第 1 页">
     <mxGraphModel dx="1840" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -161,6 +161,60 @@
         </mxCell>
         <mxCell id="_ushDdjgcCsxqVEZmOoj-24" value="grafana" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="564.5" y="1190.5" width="74" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-25" value="mc" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="27" y="1890" width="93" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-26" value="mp" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="27" y="1980" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-27" value="...." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="27" y="2070" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-28" value="filebeat&lt;br&gt;&lt;br&gt;可过滤、排除、多行采集" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="197" y="1980" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-32" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="1920" as="sourcePoint" />
+            <mxPoint x="197" y="1980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-33" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="_ushDdjgcCsxqVEZmOoj-26" target="_ushDdjgcCsxqVEZmOoj-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="127" y="2000" as="sourcePoint" />
+            <mxPoint x="204" y="2060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-34" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;entryX=0.025;entryY=0.833;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="_ushDdjgcCsxqVEZmOoj-27" target="_ushDdjgcCsxqVEZmOoj-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1940" as="sourcePoint" />
+            <mxPoint x="217" y="2000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-35" value="缓存到kafka" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="317" y="1982.5" width="103" height="57.5" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-37" value="kafka集群" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420.75" y="1970" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-38" value="fluentd消费" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540.5" y="1982.5" width="103" height="57.5" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-44" value="存储到es" style="edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="_ushDdjgcCsxqVEZmOoj-39" target="_ushDdjgcCsxqVEZmOoj-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-39" value="fluentd集群&lt;br&gt;&lt;br&gt;有自定义插件来&lt;br&gt;过滤业务数据" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="643.5" y="1971.25" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-46" value="数据展示" style="edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="_ushDdjgcCsxqVEZmOoj-43" target="_ushDdjgcCsxqVEZmOoj-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-43" value="es集群" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="643.5" y="2130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ushDdjgcCsxqVEZmOoj-45" value="grafana" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="443.5" y="2130" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
