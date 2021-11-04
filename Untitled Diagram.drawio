@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-04T11:24:06.968Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="1SfsKqwlXty8C-FvObl0" version="15.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-04T13:45:24.744Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="53b8nLZu1AiwzhIGhVEU" version="15.6.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2013" dy="707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -146,6 +146,43 @@
         </mxCell>
         <mxCell id="aa8etOfTE0e0-ZUicZg9-58" value="grafana&lt;br&gt;数据展示" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="410" y="830" width="84" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-61" value="夜莺收集netmp带宽统计示例" style="swimlane;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry y="1010" width="610" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-63" value="redis服务" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="aa8etOfTE0e0-ZUicZg9-61">
+          <mxGeometry x="400" y="70" width="66" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-88" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="aa8etOfTE0e0-ZUicZg9-61" source="aa8etOfTE0e0-ZUicZg9-85" target="aa8etOfTE0e0-ZUicZg9-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-85" value="devmgr" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="aa8etOfTE0e0-ZUicZg9-61">
+          <mxGeometry x="238" y="70" width="66" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-87" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="aa8etOfTE0e0-ZUicZg9-61" source="aa8etOfTE0e0-ZUicZg9-86" target="aa8etOfTE0e0-ZUicZg9-85">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-86" value="netmp" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="aa8etOfTE0e0-ZUicZg9-61">
+          <mxGeometry x="90" y="70" width="66" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-95" value="夜莺agent服务" style="swimlane;align=center;" vertex="1" parent="aa8etOfTE0e0-ZUicZg9-61">
+          <mxGeometry x="70" y="170" width="430" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-96" value="&lt;span&gt;&lt;li class=&quot;&quot; style=&quot;margin-bottom: 0pt ; margin-top: 0pt ; font-size: 11pt ; color: #494949 ; line-height: 1.7&quot;&gt;&lt;span class=&quot;ql-author-4609158&quot;&gt;netmp_bandwidthinfo.py&amp;nbsp; 自定义插件&lt;/span&gt;&lt;/li&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="aa8etOfTE0e0-ZUicZg9-95">
+          <mxGeometry x="44" y="45" width="326" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-101" value="根据脚本逻辑从redis读取数据，并组装数据发送到夜莺server端" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeColor=#000000;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="aa8etOfTE0e0-ZUicZg9-61" source="aa8etOfTE0e0-ZUicZg9-96" target="aa8etOfTE0e0-ZUicZg9-63">
+          <mxGeometry x="0.5457" y="-19" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="160" as="sourcePoint" />
+            <mxPoint x="420" y="110" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-104" value="夜莺server服务" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="aa8etOfTE0e0-ZUicZg9-61">
+          <mxGeometry x="171" y="350" width="228" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aa8etOfTE0e0-ZUicZg9-105" value="发送处理好数据" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="aa8etOfTE0e0-ZUicZg9-61" source="aa8etOfTE0e0-ZUicZg9-96" target="aa8etOfTE0e0-ZUicZg9-104">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
