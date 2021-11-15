@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-15T10:13:19.295Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="2e8_MHc7HcEmqX-_MCKA" version="15.6.8" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-11-15T12:29:44.522Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="mO4gftlFQMITurBV1X7U" version="15.6.8" type="github" pages="3">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="监控日志系统">
     <mxGraphModel dx="2008" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -709,7 +709,7 @@
         <mxCell id="dLXsunss4Cly1oT7zrY9-0" />
         <mxCell id="dLXsunss4Cly1oT7zrY9-1" parent="dLXsunss4Cly1oT7zrY9-0" />
         <mxCell id="dLXsunss4Cly1oT7zrY9-2" value="k8s集群：VIP=10.10.15.66" style="swimlane;align=center;fontSize=15;labelBackgroundColor=none;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-1">
-          <mxGeometry x="20" y="2820" width="1120" height="800" as="geometry" />
+          <mxGeometry x="20" y="2820" width="1120" height="970" as="geometry" />
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=15;strokeColor=#A50040;strokeWidth=2;fillColor=#d80073;" edge="1" parent="dLXsunss4Cly1oT7zrY9-2" source="dLXsunss4Cly1oT7zrY9-4" target="dLXsunss4Cly1oT7zrY9-16">
           <mxGeometry relative="1" as="geometry" />
@@ -732,7 +732,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="dLXsunss4Cly1oT7zrY9-8" value="service：&lt;br&gt;name:devmgr&lt;br&gt;type:clusterip" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#FFB570;fontSize=11;align=left;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+        <mxCell id="dLXsunss4Cly1oT7zrY9-8" value="service：&lt;br&gt;name:devmgr&lt;br&gt;type:clusterip" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=11;align=left;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry x="220" y="83" width="130" height="66" as="geometry" />
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-9" value="&lt;span style=&quot;font-size: 11px&quot;&gt;10000&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
@@ -753,16 +753,25 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="dLXsunss4Cly1oT7zrY9-13" value="service：&lt;br&gt;name:relaymc&lt;br&gt;type:NodePort" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#FFB570;fontSize=11;align=left;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+        <mxCell id="dLXsunss4Cly1oT7zrY9-13" value="service：&lt;br&gt;name:relaymc&lt;br&gt;type:NodePort" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=11;align=left;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry x="490" y="85.5" width="130" height="61" as="geometry" />
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-14" value="&lt;span style=&quot;font-size: 11px&quot;&gt;30000&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry x="590" y="98.5" width="30" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="dLXsunss4Cly1oT7zrY9-15" value="deployment&lt;br&gt;relayserver&lt;br&gt;副本数：2" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#FFFFFF;fontSize=15;align=center;verticalAlign=middle;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+        <mxCell id="dLXsunss4Cly1oT7zrY9-15" value="deployment&lt;br&gt;relayserver&lt;br&gt;副本数：3" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#FFFFFF;fontSize=15;align=center;verticalAlign=middle;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry y="460" width="90" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="dLXsunss4Cly1oT7zrY9-16" value="service：&lt;br&gt;name:relayserver&lt;br&gt;type:NodePort" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#FFB570;fontSize=11;align=left;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+        <mxCell id="26rxJBJh39qEEJQsGTjf-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontSize=15;strokeColor=#3700CC;strokeWidth=2;fillColor=#6a00ff;" edge="1" parent="dLXsunss4Cly1oT7zrY9-2" source="dLXsunss4Cly1oT7zrY9-16" target="26rxJBJh39qEEJQsGTjf-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="825" y="170" />
+              <mxPoint x="740" y="170" />
+              <mxPoint x="740" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dLXsunss4Cly1oT7zrY9-16" value="service：&lt;br&gt;name:relayserver&lt;br&gt;type:NodePort" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=11;align=left;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry x="760" y="83" width="130" height="61" as="geometry" />
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-17" value="&lt;span style=&quot;font-size: 11px&quot;&gt;30410&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
@@ -817,7 +826,7 @@
           <mxGeometry x="10" y="30" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-32" value="node2：10.10.15.65" style="swimlane;labelBackgroundColor=none;fontSize=15;align=center;verticalAlign=middle;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
-          <mxGeometry x="440" y="180" width="280" height="490" as="geometry" />
+          <mxGeometry x="420" y="180" width="280" height="490" as="geometry" />
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-33" value="pod：devmgr-aher&#xa;ip：172.17.2.3" style="swimlane;align=center;verticalAlign=middle;startSize=40;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-32">
           <mxGeometry x="32.5" y="190" width="215" height="130" as="geometry" />
@@ -847,8 +856,19 @@
         <mxCell id="dLXsunss4Cly1oT7zrY9-40" value="relayserver进程" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-39">
           <mxGeometry x="10" y="30" width="110" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="dLXsunss4Cly1oT7zrY9-41" value="tcpsocket链接：&lt;br&gt;1. 第一次建立链接是通过service的负载规则选择一个pod进行链接&lt;br&gt;2. 之后会一直和这个pod保持链接&lt;br&gt;3. 链接阶段，如果pod销毁，会重新发起链接，重新走第一步" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-32">
-          <mxGeometry x="10" y="370" width="260" height="110" as="geometry" />
+        <mxCell id="26rxJBJh39qEEJQsGTjf-1" value="pod：relayserver-ssdd&#xa;ip：172.17.2.10" style="swimlane;align=center;verticalAlign=middle;startSize=40;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-32">
+          <mxGeometry x="30" y="340" width="215" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="26rxJBJh39qEEJQsGTjf-2" value="&lt;span style=&quot;font-size: 11px&quot;&gt;30410&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="26rxJBJh39qEEJQsGTjf-1">
+          <mxGeometry x="185" y="40" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="26rxJBJh39qEEJQsGTjf-3" value="容器" style="swimlane;labelBackgroundColor=none;fontSize=11;align=center;verticalAlign=middle;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="26rxJBJh39qEEJQsGTjf-1">
+          <mxGeometry x="10" y="50" width="150" height="70" as="geometry">
+            <mxRectangle x="10" y="50" width="60" height="23" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26rxJBJh39qEEJQsGTjf-4" value="relayserver进程" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="26rxJBJh39qEEJQsGTjf-3">
+          <mxGeometry x="10" y="30" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-42" value="node3：10.10.15.67" style="swimlane;labelBackgroundColor=none;fontSize=15;align=center;verticalAlign=middle;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry x="770" y="180" width="280" height="490" as="geometry" />
@@ -905,7 +925,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=15;strokeColor=#000000;strokeWidth=2;" edge="1" parent="dLXsunss4Cly1oT7zrY9-2" source="dLXsunss4Cly1oT7zrY9-37" target="dLXsunss4Cly1oT7zrY9-9">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="411" y="243" />
+              <mxPoint x="411" y="116" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="dLXsunss4Cly1oT7zrY9-57" value="注册" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="dLXsunss4Cly1oT7zrY9-56">
           <mxGeometry x="-0.2554" y="-2" relative="1" as="geometry">
@@ -927,7 +952,8 @@
             <Array as="points">
               <mxPoint x="760" y="403" />
               <mxPoint x="760" y="160" />
-              <mxPoint x="350" y="160" />
+              <mxPoint x="410" y="160" />
+              <mxPoint x="410" y="116" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -959,11 +985,17 @@
         <mxCell id="dLXsunss4Cly1oT7zrY9-64" value="service：可以指定具体的nodePort" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry x="10" y="30" width="140" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="dLXsunss4Cly1oT7zrY9-65" value="设备注册列表：&lt;br&gt;1. devmgr：172.17.1.1:10000,172.17.2.3:10000&lt;br&gt;2. mc: 172.17.1.9:20000&lt;br&gt;3. relayserver: 10.10.15.65:30410,10.10.15.67:30410&lt;br&gt;4. relaymc: 10.10.15.66:30000&lt;br&gt;5. netmp: 172.17.3.11:40000" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
-          <mxGeometry x="320" y="680" width="360" height="110" as="geometry" />
+        <mxCell id="dLXsunss4Cly1oT7zrY9-65" value="设备注册列表(不同服务使用的不同类型的ip注册)：&lt;br&gt;1. devmgr：172.17.1.1:10000,172.17.2.3:10000&lt;br&gt;2. mc: 172.17.1.9:20000&lt;br&gt;3. relayserver: 10.10.15.65:30410,10.10.15.67:30410&lt;br&gt;10.10.15.65:30410&lt;br&gt;4. relaymc: 10.10.15.66:30000&lt;br&gt;5. netmp: 172.17.3.11:40000" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+          <mxGeometry x="320" y="675" width="370" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="dLXsunss4Cly1oT7zrY9-66" value="客户端流服务数据走向：&lt;br&gt;1. ter1-&amp;gt;10.10.15.65:30410-&amp;gt;relayserver_service-&amp;gt; 172.17.2.6:30410(service可以配置只访问当前节点的pod)&lt;br&gt;2. ter2-&amp;gt;10.10.15.67:30410-&amp;gt;relayserver_service-&amp;gt; 172.17.3.7:30410" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+        <mxCell id="dLXsunss4Cly1oT7zrY9-66" value="客户端流服务数据走向：&lt;br&gt;1. ter1-&amp;gt;10.10.15.67:30410-&amp;gt;relayserver_service-&amp;gt; 172.17.3.7:30410(service可以配置只访问当前节点的pod)&lt;br&gt;2. ter2-&amp;gt;10.10.15.65:30410-&amp;gt;relayserver_service-&amp;gt; 172.17.2.6:30410(或者172.17.2.10:30410)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
           <mxGeometry x="710" y="680" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="26rxJBJh39qEEJQsGTjf-0" value="relayserver启动过程(其他服务都是)：&lt;br&gt;1. 制作docker镜像时，提前在启动文件中处理好启动逻辑，镜像的启动文件是由relayserver.sh-》relayserver-docker.sh改动而来&lt;br&gt;2. 在relayserver-docker.sh文件开始处，先获得环境变量用来更新配置文件，后面的操作不变。&lt;br&gt;3. 整体就是在程序启动前根据pod传递的环境变量修改配置文件&lt;br&gt;4. 在一个节点中启动了2个pod，注册列表会出现2个ip和端口一样的relayserver" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+          <mxGeometry x="20" y="800" width="490" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="dLXsunss4Cly1oT7zrY9-41" value="tcpsocket链接：&lt;br&gt;1. 第一次建立链接是通过service的负载规则选择一个pod进行链接&lt;br&gt;2. 之后会一直和这个pod保持链接&lt;br&gt;3. 链接阶段，如果pod销毁，会重新发起链接，重新走第一步" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="dLXsunss4Cly1oT7zrY9-2">
+          <mxGeometry x="550" y="820" width="300" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
