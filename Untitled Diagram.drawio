@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-23T09:30:19.377Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="u1Qgp4aZTTFbsIbKIznd" version="15.8.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-11-23T10:03:35.316Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="iKoLR6qJPK7NrGxzoQrd" version="15.8.2" type="github" pages="4">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="监控日志系统">
     <mxGraphModel dx="1019" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1075,12 +1075,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="MzEndj7UbH2--wxi9crw" name="内网部署">
-    <mxGraphModel dx="1019" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1846" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="42GbZgxYKU58zxchOwmc-0" />
         <mxCell id="42GbZgxYKU58zxchOwmc-1" parent="42GbZgxYKU58zxchOwmc-0" />
         <mxCell id="42GbZgxYKU58zxchOwmc-2" value="k8s内网部署会见" style="swimlane;align=center;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
-          <mxGeometry y="110" width="930" height="1430" as="geometry" />
+          <mxGeometry y="110" width="940" height="2080" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-5" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
           <mxGeometry x="30" y="60" width="820" height="700" as="geometry" />
@@ -1220,6 +1220,90 @@
         <mxCell id="42GbZgxYKU58zxchOwmc-54" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: api-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-52">
           <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-55" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="30" y="850" width="820" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-56" value="contrller-nginx" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="57.5" y="880" width="170" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-58" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-56">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-59" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;listen: 8080&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;upstream : controller-gateway:8060&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-56">
+          <mxGeometry x="15" y="170" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-57" value="&lt;div&gt;&lt;span&gt;service：&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name: controller-nginx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;type: NodePort&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nodePort: 30081&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: 8080&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;targetPort: 8080&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="42GbZgxYKU58zxchOwmc-56">
+          <mxGeometry x="10" y="60" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-64" value="controller-nacos" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="250" y="880" width="190" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-65" value="&lt;div&gt;&lt;span&gt;service：&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;name: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;type: ClusterIP&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: 8848&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;targetPort: 8848&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="42GbZgxYKU58zxchOwmc-64">
+          <mxGeometry x="20" y="60" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-66" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-64">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-67" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;listen: 8848&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-64">
+          <mxGeometry x="20" y="160" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-68" value="controller-gateway" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="465" y="880" width="175" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-69" value="&lt;div&gt;&lt;span&gt;service：&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;name: controller-gateway&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;type: ClusterIP&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: 8060&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;targetPort: 8060&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="42GbZgxYKU58zxchOwmc-68">
+          <mxGeometry x="20" y="60" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-70" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-68">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-71" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;listen: 8060&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-68">
+          <mxGeometry x="20" y="160" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-72" value="controller-会议分配器服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="650" y="880" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-73" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-72">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-74" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-72">
+          <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-75" value="controller-扩容检测服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="650" y="1030" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-76" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-75">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-77" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-75">
+          <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-78" value="controller-DevMgr服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="55" y="1140" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-79" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-78">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-80" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-78">
+          <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-81" value="controller-web会控服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="260" y="1140" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-82" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-81">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-83" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-81">
+          <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-84" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="30" y="1360" width="820" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-89" value="" style="shape=doubleArrow;direction=south;whiteSpace=wrap;html=1;align=center;arrowWidth=0.3;arrowSize=0.14;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="420" y="760" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-90" value="通过api-nacos service name 可以找到api-nacos服务" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
+          <mxGeometry x="235" y="780" width="445" height="50" as="geometry" />
+        </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-3" value="client" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
           <mxGeometry x="160" y="20" width="40" height="60" as="geometry" />
         </mxCell>
@@ -1228,6 +1312,15 @@
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-8" value="k8s集群数据：&lt;br&gt;VIP:10.10.15.66" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
           <mxGeometry x="950" y="110" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-85" value="contrller-MC" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
+          <mxGeometry x="-210" y="1480" width="170" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-86" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-85">
+          <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-87" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;localip: podip()&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-85">
+          <mxGeometry x="20" y="60" width="140" height="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
