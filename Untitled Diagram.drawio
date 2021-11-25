@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-25T09:46:48.315Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="dIx8NaysoMirwCg5VPxk" version="15.8.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-11-25T12:49:38.278Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="DQuUYV7uCqk7nEHxK7bz" version="15.8.2" type="github" pages="4">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="监控日志系统">
     <mxGraphModel dx="1019" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1179,7 +1179,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="MzEndj7UbH2--wxi9crw" name="内外网部署">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="42GbZgxYKU58zxchOwmc-0" />
         <mxCell id="42GbZgxYKU58zxchOwmc-1" parent="42GbZgxYKU58zxchOwmc-0" />
@@ -1364,13 +1364,13 @@
           <mxGeometry x="20" y="160" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-72" value="controller-会议分配器服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
-          <mxGeometry x="650" y="880" width="180" height="130" as="geometry" />
+          <mxGeometry x="650" y="880" width="180" height="140" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-73" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-72">
           <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="42GbZgxYKU58zxchOwmc-74" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-72">
-          <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
+        <mxCell id="42GbZgxYKU58zxchOwmc-74" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;api-nacos:api-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-72">
+          <mxGeometry x="20" y="60" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-75" value="controller-扩容检测服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
           <mxGeometry x="650" y="1030" width="180" height="130" as="geometry" />
@@ -1382,13 +1382,13 @@
           <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-78" value="controller-DevMgr服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
-          <mxGeometry x="55" y="1140" width="180" height="130" as="geometry" />
+          <mxGeometry x="57.5" y="1130" width="180" height="140" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-79" value="deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="42GbZgxYKU58zxchOwmc-78">
           <mxGeometry x="10" y="30" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="42GbZgxYKU58zxchOwmc-80" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-78">
-          <mxGeometry x="20" y="60" width="140" height="60" as="geometry" />
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-50" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: xxxxx&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nacos: controller-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;api-nacos:api-nacos&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-78">
+          <mxGeometry x="17.5" y="60" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-81" value="controller-web会控服务" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
           <mxGeometry x="260" y="1140" width="180" height="130" as="geometry" />
@@ -1417,7 +1417,7 @@
         <mxCell id="42GbZgxYKU58zxchOwmc-87" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;localip: podip(172.17.0.1)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;getDevmgrlist: controller-nginx:8080&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-85">
           <mxGeometry x="10" y="60" width="170" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="42GbZgxYKU58zxchOwmc-91" value="&lt;div&gt;&lt;span&gt;pvc：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;local&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;/huijian/mc/Licence.ini&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;:/opt/huijian/mc/Licence.ini&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-85">
+        <mxCell id="42GbZgxYKU58zxchOwmc-91" value="&lt;div&gt;&lt;span&gt;pvc：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;local&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;/huijian/mc/Licence.ini&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;:/opt/huijian/mc/Licence.ini&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="42GbZgxYKU58zxchOwmc-85">
           <mxGeometry x="10" y="170" width="170" height="70" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-171" value="contrller-RelayMC" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-2">
@@ -1594,8 +1594,17 @@
         <mxCell id="42GbZgxYKU58zxchOwmc-8" value="k8s集群数据：&lt;br&gt;VIP:10.10.15.66" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
           <mxGeometry x="890" y="110" width="170" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="42GbZgxYKU58zxchOwmc-223" value="示例：服务名称" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
-          <mxGeometry x="890" y="200" width="190" height="430" as="geometry" />
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-24" value="api对客户端只暴露nginx(NodePort类型的service方式)供其访问。&lt;br&gt;访问地址：10.10.15.66:30080&lt;br&gt;&lt;br&gt;api-nacos设置clusterIP类型的service供集群内的其他服务访问。&lt;br&gt;api中的其他服务使用api-nacos来注册&lt;br&gt;&lt;br&gt;api-gateway设置clusterIp类型的service来供nginx转发" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;strokeColor=#d6b656;align=left;fillColor=#fff2cc;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
+          <mxGeometry x="890" y="650" width="190" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-25" value="会议分配器跟api类似。&lt;br&gt;只对客户端只暴露nginx(NodePort类型的service方式)供其访问。&lt;br&gt;访问地址：10.10.15.66:30081&lt;br&gt;&lt;br&gt;会议分配器-nacos设置clusterIP类型的service供集群内的其他服务访问。&lt;br&gt;会议分配器中的其他服务使用controller-nacos来注册&lt;br&gt;&lt;br&gt;controller-gateway设置clusterIp类型的service来供nginx转发" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;strokeColor=#d6b656;align=left;fillColor=#fff2cc;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
+          <mxGeometry x="890" y="969" width="190" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-26" value="内外网环境增加左侧的部署。&lt;br&gt;&lt;br&gt;relayserver-outer: 供外网访问&lt;br&gt;&lt;br&gt;relaymc-outer：供外网访问&lt;br&gt;&lt;br&gt;cas-outer: 供外网提供&lt;br&gt;&lt;br&gt;外网IP的情景：&lt;br&gt;1. 每个节点都有内网ip和外网IP：在启动脚本中获得节点IP时选择外网IP即可(如何选择，需要找一个环境测试)。&lt;br&gt;2. 外网ip是网络管理员提供的映射：这样就需要指定节点部署服务，端口可提前规划好来适应扩容操作。" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;strokeColor=#d6b656;align=left;fillColor=#fff2cc;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
+          <mxGeometry x="900" y="2720" width="190" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="42GbZgxYKU58zxchOwmc-223" value="详情示例：服务名称" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
+          <mxGeometry x="890" y="210" width="190" height="410" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-224" value="&lt;div&gt;&lt;span&gt;service：&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;name: 通过name通信&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;type: ClusterIP只能集群内通信，NodePort可供外网访问&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: service 端口&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;targetPort: pod端口&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nodePort: node端口&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="42GbZgxYKU58zxchOwmc-223">
           <mxGeometry x="20" y="60" width="160" height="130" as="geometry" />
@@ -1606,20 +1615,29 @@
         <mxCell id="42GbZgxYKU58zxchOwmc-226" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;服务的配置文件相关参数&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-223">
           <mxGeometry x="22.5" y="350" width="150" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="42GbZgxYKU58zxchOwmc-227" value="&lt;div&gt;&lt;span&gt;pvc：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;需要做目录或文件映射&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="42GbZgxYKU58zxchOwmc-223">
+        <mxCell id="42GbZgxYKU58zxchOwmc-227" value="&lt;div&gt;&lt;span&gt;pvc：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;需要做目录或文件映射&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="42GbZgxYKU58zxchOwmc-223">
           <mxGeometry x="20" y="275" width="155" height="60" as="geometry" />
         </mxCell>
         <mxCell id="42GbZgxYKU58zxchOwmc-228" value="pod spec:&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;pod特殊设置列表" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="42GbZgxYKU58zxchOwmc-223">
           <mxGeometry x="20" y="210" width="155" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Biz2_hzM-bS9FCf7KFrd-24" value="api对客户端只暴露nginx(NodePort类型的service方式)供其访问。&lt;br&gt;访问地址：10.10.15.66:30080&lt;br&gt;&lt;br&gt;api-nacos设置clusterIP类型的service供集群内的其他服务访问。&lt;br&gt;api中的其他服务使用api-nacos来注册&lt;br&gt;&lt;br&gt;api-gateway设置clusterIp类型的service来供nginx转发" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;strokeColor=#d6b656;align=left;fillColor=#fff2cc;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
-          <mxGeometry x="890" y="650" width="190" height="200" as="geometry" />
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-43" value="详情示例：服务名称" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
+          <mxGeometry x="1210" y="200" width="550" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="Biz2_hzM-bS9FCf7KFrd-25" value="会议分配器跟api类似。&lt;br&gt;只对客户端只暴露nginx(NodePort类型的service方式)供其访问。&lt;br&gt;访问地址：10.10.15.66:30081&lt;br&gt;&lt;br&gt;会议分配器-nacos设置clusterIP类型的service供集群内的其他服务访问。&lt;br&gt;会议分配器中的其他服务使用controller-nacos来注册&lt;br&gt;&lt;br&gt;controller-gateway设置clusterIp类型的service来供nginx转发" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;strokeColor=#d6b656;align=left;fillColor=#fff2cc;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
-          <mxGeometry x="890" y="969" width="190" height="200" as="geometry" />
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-44" value="&lt;div&gt;&lt;span&gt;service：&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;name: 通过name通信&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;type: ClusterIP只能集群内通信，NodePort可供外网访问&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;port: service 端口&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;targetPort: pod端口&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;nodePort: node端口&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="Biz2_hzM-bS9FCf7KFrd-43">
+          <mxGeometry x="20" y="60" width="160" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="Biz2_hzM-bS9FCf7KFrd-26" value="内外网环境增加左侧的部署。&lt;br&gt;&lt;br&gt;relayserver-outer: 供外网访问&lt;br&gt;&lt;br&gt;relaymc-outer：供外网访问&lt;br&gt;&lt;br&gt;cas-outer: 供外网提供&lt;br&gt;&lt;br&gt;外网IP的情景：&lt;br&gt;1. 每个节点都有内网ip和外网IP：在启动脚本中获得节点IP时选择外网IP即可(如何选择，需要找一个环境测试)。&lt;br&gt;2. 外网ip是网络管理员提供的映射：这样就需要指定节点部署服务，端口可提前规划好来适应扩容操作。" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;strokeColor=#d6b656;align=left;fillColor=#fff2cc;" vertex="1" parent="42GbZgxYKU58zxchOwmc-1">
-          <mxGeometry x="900" y="2720" width="190" height="280" as="geometry" />
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-45" value="K8S控制器类型" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Biz2_hzM-bS9FCf7KFrd-43">
+          <mxGeometry x="10" y="30" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-46" value="&lt;div&gt;&lt;span&gt;config：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;服务的配置文件相关参数&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="Biz2_hzM-bS9FCf7KFrd-43">
+          <mxGeometry x="380" y="60" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-47" value="&lt;div&gt;&lt;span&gt;pvc：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;需要做目录或文件映射&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="Biz2_hzM-bS9FCf7KFrd-43">
+          <mxGeometry x="190" y="130" width="155" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Biz2_hzM-bS9FCf7KFrd-48" value="pod spec:&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;pod特殊设置列表" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="Biz2_hzM-bS9FCf7KFrd-43">
+          <mxGeometry x="190" y="60" width="155" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
