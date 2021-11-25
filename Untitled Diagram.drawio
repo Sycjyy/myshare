@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-24T13:21:11.758Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="8xxrQp1pD865UQMEaKnB" version="15.8.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-11-25T02:43:15.233Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="zoFu_OJJGLVVp8A3Jh4E" version="15.8.2" type="github" pages="4">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="监控日志系统">
     <mxGraphModel dx="1019" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -337,7 +337,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="oELFNrG83piSHTs4wW_l" name="K8S">
-    <mxGraphModel dx="1019" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="j9vWINe0RdKqNfeZ6DUA-0" />
         <mxCell id="j9vWINe0RdKqNfeZ6DUA-1" parent="j9vWINe0RdKqNfeZ6DUA-0" />
@@ -766,7 +766,7 @@
           <mxGeometry x="10" y="30" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="mChnRi9P1l8ZycNRIRtO-0" value="k8s集群" style="swimlane;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="j9vWINe0RdKqNfeZ6DUA-1">
-          <mxGeometry x="40" y="2980" width="760" height="650" as="geometry" />
+          <mxGeometry x="40" y="2980" width="760" height="630" as="geometry" />
         </mxCell>
         <mxCell id="mChnRi9P1l8ZycNRIRtO-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="mChnRi9P1l8ZycNRIRtO-0" source="mChnRi9P1l8ZycNRIRtO-1" target="mChnRi9P1l8ZycNRIRtO-11">
           <mxGeometry relative="1" as="geometry" />
@@ -829,10 +829,10 @@
         <mxCell id="mChnRi9P1l8ZycNRIRtO-25" value="relayserver" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mChnRi9P1l8ZycNRIRtO-0">
           <mxGeometry x="170" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="mChnRi9P1l8ZycNRIRtO-28" value="K8S部署就是考虑服务采用哪种通信方式。要采用哪种通信方式，需要了解每种通信方式的特点。&lt;br&gt;所有与终端通信的都属于集群外通信" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="mChnRi9P1l8ZycNRIRtO-0">
+        <mxCell id="mChnRi9P1l8ZycNRIRtO-28" value="K8S部署就是考虑服务采用哪种通信方式。要采用哪种通信方式，需要了解每种通信方式的特点。&lt;br&gt;所有与终端通信的服务都属于集群外通信" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="mChnRi9P1l8ZycNRIRtO-0">
           <mxGeometry x="500" y="310" width="240" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="mChnRi9P1l8ZycNRIRtO-29" value="1. service方式：&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;service只是一种代理规则，根据负载规则代理到该service所管理的pod上。采用这种方式的服务需要做到无状态，通过相同访问入口，最终落到某个pod上，pod(服务)的处理逻辑应该是一样的。如果不能满足，更改业务逻辑，或使用其他通信方式。&lt;br&gt;2. hostnetwork方式：&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;使用hostnetwork方式的pod其实是共享了所落在的节点上的网络，没有podip，所有通信直接走宿主机网络。该方式的特点不能使用集群的vip访问，所以此类方式的服务需要有注册中心来支持，启动后将自己注册到注册中心上，让其他服务发现自己。由于是共享宿主机网络，服务就要有自己处理网络端口冲突的能力(或者在启动脚本中做文章)。此类方式的网络应该比service快一些，减少了代理转发的过程。" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="mChnRi9P1l8ZycNRIRtO-0">
+        <mxCell id="mChnRi9P1l8ZycNRIRtO-29" value="不同通信方式的特点：&lt;br&gt;1. service方式：&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;service只是一种代理规则，根据负载规则代理到该service所管理的pod上。采用这种方式的服务需要做到无状态，通过相同访问入口，最终落到某个pod上，pod(服务)的处理逻辑应该是一样的。如果不能满足，更改业务逻辑，或使用其他通信方式。&lt;br&gt;2. hostnetwork方式：&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;使用hostnetwork方式的pod其实是共享了所落在的节点上的网络，没有podip，所有通信直接走宿主机网络。该方式的特点不能使用集群的vip访问，所以此类方式的服务需要有注册中心来支持，启动后将自己注册到注册中心上，让其他服务发现自己。由于是共享宿主机网络，服务就要有自己处理网络端口冲突的能力(或者在启动脚本中做文章)。&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;hostnetwork方式在安全性上的管理会下沉到节点处，需要对节点公开服务需要的端口。" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="mChnRi9P1l8ZycNRIRtO-0">
           <mxGeometry x="10" y="480" width="730" height="140" as="geometry" />
         </mxCell>
         <mxCell id="mChnRi9P1l8ZycNRIRtO-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="j9vWINe0RdKqNfeZ6DUA-1" source="mChnRi9P1l8ZycNRIRtO-3" target="mChnRi9P1l8ZycNRIRtO-17">
@@ -873,7 +873,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="FXBYYU9vrMCe3K9esWxH" name="Page-3">
-    <mxGraphModel dx="1019" dy="-1702" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1896" dy="-1322" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="dLXsunss4Cly1oT7zrY9-0" />
         <mxCell id="dLXsunss4Cly1oT7zrY9-1" parent="dLXsunss4Cly1oT7zrY9-0" />
@@ -1166,7 +1166,7 @@
         <mxCell id="dLXsunss4Cly1oT7zrY9-41" value="tcpsocket链接：&lt;br&gt;1. 第一次建立链接是通过service的负载规则选择一个pod进行链接&lt;br&gt;2. 之后会一直和这个pod保持链接&lt;br&gt;3. 链接阶段，如果pod销毁，会重新发起链接，重新走第一步" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" parent="dLXsunss4Cly1oT7zrY9-2" vertex="1">
           <mxGeometry x="550" y="820" width="300" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="26rxJBJh39qEEJQsGTjf-8" value="Vertical Container" style="swimlane;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;" parent="dLXsunss4Cly1oT7zrY9-1" vertex="1">
+        <mxCell id="26rxJBJh39qEEJQsGTjf-8" value="+" style="swimlane;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;" parent="dLXsunss4Cly1oT7zrY9-1" vertex="1">
           <mxGeometry x="130" y="3900" width="650" height="400" as="geometry" />
         </mxCell>
         <mxCell id="26rxJBJh39qEEJQsGTjf-9" value="licence授权过程：&lt;br&gt;1. 部署时，执行getlicencekey程序，获得cpuid和mac地址，进行加密生成txt文件。&lt;br&gt;2. 用这个txt文件去咱们的授权平台进行授权，获得licence.ini文件&lt;br&gt;3. 把licence.ini文件放到mc所在的服务器上&lt;br&gt;4. mc程序也会去获得cpuid和mac地址，拿这两项去解密licence.ini文件获得授权点数" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontSize=15;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" parent="26rxJBJh39qEEJQsGTjf-8" vertex="1">
@@ -1179,7 +1179,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="MzEndj7UbH2--wxi9crw" name="内网部署">
-    <mxGraphModel dx="1019" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="42GbZgxYKU58zxchOwmc-0" />
         <mxCell id="42GbZgxYKU58zxchOwmc-1" parent="42GbZgxYKU58zxchOwmc-0" />
