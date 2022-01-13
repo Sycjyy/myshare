@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-01-13T06:40:58.968Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36 Edg/97.0.1072.55" etag="eUOK-YvBmRnv7WDP3XgQ" version="16.2.6" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2022-01-13T11:19:45.939Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36 Edg/97.0.1072.55" etag="J89YWfESM4uk7AFfXlhn" version="16.2.6" type="github" pages="5">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="监控日志系统">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -499,6 +499,78 @@
         </mxCell>
         <mxCell id="LBHaVSCfayHxdMRXNl5h-30" value="问题：&lt;br&gt;1. grafana是否能直接接入到kubesphere中，这样就可以直接使用大盘数据&lt;br&gt;2. kubesphere能否修改日志服务逻辑，默认的是fluent-bit + es。&lt;br&gt;3. 业务数据能否直接接入" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-36">
           <mxGeometry x="520" y="590" width="640" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-40" value="业务监控指标入Prometheus方案" style="swimlane;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="4070" width="800" height="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-41" value="方案一：自己实现exporter供Prometheus拉取" style="swimlane;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-40">
+          <mxGeometry x="49" y="60" width="690" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-42" value="自定义监控服务&lt;br&gt;提供http接口：/metrics&lt;br&gt;接口返回数据需要满足Prometheus数据结构" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-41">
+          <mxGeometry x="56" y="70" width="164" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-44" value="pull&lt;br&gt;业务指标数据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="LBHaVSCfayHxdMRXNl5h-41" source="LBHaVSCfayHxdMRXNl5h-43" target="LBHaVSCfayHxdMRXNl5h-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="266" y="120" />
+              <mxPoint x="266" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-43" value="Prometheus服务端" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-41">
+          <mxGeometry x="426" y="70" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-49" value="需要在业务的处理逻辑中，增加Prometheus的数据结构的处理，要对Prometheus的指标数据格式有一定的了解。但这种方式是自己完全可控的。" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-41">
+          <mxGeometry x="56" y="180" width="534" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-45" value="方案二：使用pushgateway做中转服务" style="swimlane;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-40">
+          <mxGeometry x="49" y="350" width="690" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-51" value="push&lt;br&gt;业务数据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="LBHaVSCfayHxdMRXNl5h-45" source="LBHaVSCfayHxdMRXNl5h-46" target="LBHaVSCfayHxdMRXNl5h-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-46" value="自定义监控服务" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-45">
+          <mxGeometry x="56" y="80" width="134" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-47" value="pull&lt;br&gt;业务指标数据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="LBHaVSCfayHxdMRXNl5h-45" source="LBHaVSCfayHxdMRXNl5h-48" target="LBHaVSCfayHxdMRXNl5h-50">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="446" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-48" value="Prometheus服务端" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-45">
+          <mxGeometry x="520" y="80" width="135" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-50" value="pushgateway服务" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-45">
+          <mxGeometry x="291" y="80" width="135" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-52" value="该方案需要自定义服务主动推数据到pushgateway，pushgateway将数据存储在内存中，业务的指标数据不一定是准确的，如果自定义监控服务挂掉或不推送数据，导致pushgateway中的数据没有更新而不准确，这个数据取决于pushgateway的数据保留时长配置，默认是5分钟" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-45">
+          <mxGeometry x="56" y="170" width="534" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-53" value="方案三：使用夜莺服务做中转服务" style="swimlane;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-40">
+          <mxGeometry x="49" y="620" width="690" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-54" value="push&lt;br&gt;业务数据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="LBHaVSCfayHxdMRXNl5h-53" source="LBHaVSCfayHxdMRXNl5h-55" target="LBHaVSCfayHxdMRXNl5h-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-55" value="自定义监控服务" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-53">
+          <mxGeometry x="56" y="80" width="134" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-57" value="Prometheus服务端" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-53">
+          <mxGeometry x="520" y="80" width="135" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-60" value="writeremote&lt;br&gt;api写业务数据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="LBHaVSCfayHxdMRXNl5h-53" source="LBHaVSCfayHxdMRXNl5h-58" target="LBHaVSCfayHxdMRXNl5h-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-58" value="夜莺server服务&lt;br&gt;及其相关的服务" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-53">
+          <mxGeometry x="277.5" y="80" width="135" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-59" value="夜莺服务充当中转服务，接收并处理数据结构后利用Prometheus api写入到Prometheus数据库。此方案实现起来比较方便，但太过依赖夜莺系统。通过简单验证，夜莺的push接口没有验证规则，只要网络可达即可上报数据。" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-53">
+          <mxGeometry x="56" y="170" width="534" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LBHaVSCfayHxdMRXNl5h-61" value="监控服务作为会见的全部服务的业务指标收集，如果这些业务指标作为弹性伸缩的判断指标，可能会出现自定义监控服务挂掉，导致指标数据上报不及时，从而触发缩容操作。" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="LBHaVSCfayHxdMRXNl5h-40">
+          <mxGeometry x="49" y="930" width="534" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
