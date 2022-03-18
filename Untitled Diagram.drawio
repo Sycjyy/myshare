@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-18T08:31:18.157Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="abtq6w8at7n8zXvdzhC6" version="16.0.3" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2022-03-18T08:36:13.547Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="TUXrkmc4ORhKrMxM0ARs" version="16.0.3" type="github" pages="7">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="监控日志系统">
     <mxGraphModel dx="1422" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3087,14 +3087,11 @@
         <mxCell id="JOubqYgL1lKwtz1eNyw--214" value="redis" style="swimlane;align=center;fillColor=#0050ef;strokeColor=#001DBC;startSize=30;fontColor=#ffffff;" vertex="1" parent="ToamJVDmpEhSGVNMzsVE-1">
           <mxGeometry x="580" y="2160" width="151.25" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="JOubqYgL1lKwtz1eNyw--215" value="statefulset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;" vertex="1" parent="JOubqYgL1lKwtz1eNyw--214">
+        <mxCell id="JOubqYgL1lKwtz1eNyw--215" value="service+&lt;br&gt;statefulset" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;" vertex="1" parent="JOubqYgL1lKwtz1eNyw--214">
           <mxGeometry x="45.629999999999995" y="30" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="JOubqYgL1lKwtz1eNyw--216" value="与集群外通信服务" style="shape=umlFrame;whiteSpace=wrap;html=1;dashed=1;width=140;height=20;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="ToamJVDmpEhSGVNMzsVE-1">
           <mxGeometry x="10" y="1780" width="780" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="JOubqYgL1lKwtz1eNyw--217" value="集群内通信服务" style="shape=umlFrame;whiteSpace=wrap;html=1;dashed=1;width=140;height=20;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="ToamJVDmpEhSGVNMzsVE-1">
-          <mxGeometry x="15" y="2010" width="750" height="240" as="geometry" />
         </mxCell>
         <mxCell id="JOubqYgL1lKwtz1eNyw--219" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.multi-document;whiteSpace=wrap;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="ToamJVDmpEhSGVNMzsVE-1">
           <mxGeometry x="892" y="1900" width="88" height="60" as="geometry" />
@@ -3113,6 +3110,9 @@
             <mxPoint x="580.2" y="2006" as="sourcePoint" />
             <mxPoint x="580" y="1940" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="JOubqYgL1lKwtz1eNyw--217" value="集群内通信服务" style="shape=umlFrame;whiteSpace=wrap;html=1;dashed=1;width=140;height=20;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="ToamJVDmpEhSGVNMzsVE-1">
+          <mxGeometry x="20" y="2010" width="750" height="240" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
