@@ -1,1 +1,70 @@
-<mxfile host="app.diagrams.net" modified="2022-04-11T12:00:42.233Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" version="15.8.6" etag="NcFajx3LMrLLjgh8xmPM" type="github"><diagram id="wCK0QgdXeA7YOA7sDi89">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-04-11T12:36:55.157Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="AGGuDc79S3Jzm4YySFBC" version="15.8.6" type="github">
+  <diagram id="wCK0QgdXeA7YOA7sDi89" name="Page-1">
+    <mxGraphModel dx="1181" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-6" value="mysql" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="470" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="9mNkQb0Gts2Jow6KjjeW-7" target="9mNkQb0Gts2Jow6KjjeW-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-7" value="redis" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="240" y="470" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-9" value="聊天评论" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="120" y="170" width="590" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-14" value="将用户信息及消息存储到redis的有序集合中&lt;br&gt;&lt;br&gt;毫秒级时间戳作为score&lt;br&gt;&lt;br&gt;直播标识作为key" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=bottom;" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-9">
+          <mxGeometry x="80" y="50" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-15" value="状态：直播中" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-9">
+          <mxGeometry x="110" y="60" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-20" value="从redis中有序集合中获得大于传递的时间戳的数据进行返回&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=bottom;" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-9">
+          <mxGeometry x="280" y="50" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-21" value="状态：直播中" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-9">
+          <mxGeometry x="300" y="60" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-28" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;1. 前端根据直播状态调用不同的接口。&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;2..直播结束后的数据从mysql中获取(提供新的接口)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;3. 直播状态的变更如何确定(调第三方的接口？)&lt;/span&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-9">
+          <mxGeometry x="440" y="45" width="130" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="9mNkQb0Gts2Jow6KjjeW-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="60" as="sourcePoint" />
+            <mxPoint x="400" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-12" value="http请求&lt;br&gt;/sendmessage" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-13" value="客户端发送消息" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-11">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="9mNkQb0Gts2Jow6KjjeW-14" target="9mNkQb0Gts2Jow6KjjeW-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-17" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="60" as="sourcePoint" />
+            <mxPoint x="460" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-18" value="ws请求&lt;br&gt;/getmessage&lt;br&gt;参数：最后一条数据的时间戳" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-19" value="客户端更新消息" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="9mNkQb0Gts2Jow6KjjeW-17">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="9mNkQb0Gts2Jow6KjjeW-20" target="9mNkQb0Gts2Jow6KjjeW-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9mNkQb0Gts2Jow6KjjeW-27" value="直播结束后执行数据持久化" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="480" width="160" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
